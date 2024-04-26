@@ -1,29 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Card from './Card';
+import Header from './components/Header';
+import NotesList from './components/NotesList';
+import { notes } from './data/notes.data';
+
 
 export default function App() {
 
-  console.log('Hallo Welt')
+  // Die App gibt das Grundgerüst der Anwendung vor
+  // Hier werden wir später viele Informationen speichern und an Komponenten weitergeben
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Das ist eine coole App von uns. Weiter Infos gibt es auf Github oder unter der Website von Techstarter.
-        </p>
-        <a
-          className="App-link"
-          href="https://www.techstarter.de"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Klick hier um zur Techstarter-Website zu gelangen.
-        </a>
-        < Card />
-      </header>
-    </div>
+    <>
+    <Header />
+    <NotesList notes = {notes}/>
+
+    </>
   )
 }
