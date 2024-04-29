@@ -18,10 +18,13 @@ function NotesList(props: Props){
                         props.notes.map(note => 
                             <Col md={6} key={note.id}>
                                 <NotesCard
-                                id={note.id}
-                                title={note.title}
-                                categories={note.categories}
-                                content={note.content} />
+                                    id={note.id}
+                                    title={note.title}
+                                    categories={note.categories}
+                                    content={note.content} 
+                                    user="" // Leerer Wert für den Benutzernamen
+                                    date={note.date || new Date()} // date kann optional sein
+                                /> 
                             </Col>
                     )}
                 </Row>
