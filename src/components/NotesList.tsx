@@ -1,5 +1,5 @@
 import NotesCard from "./NotesCard";
-import { Note } from "../types/notes.type";
+import { Note } from "../types/notes.types";
 import { Col, Container, Row } from "react-bootstrap";
 
 type Props = {

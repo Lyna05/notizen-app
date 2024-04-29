@@ -1,4 +1,4 @@
-import { Note } from '../types/notes.type'
+import { Note } from '../types/notes.types'
 
 
 export const notesData: Note[] = [
