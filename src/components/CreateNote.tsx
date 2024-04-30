@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Button, Card, Form } from "react-bootstrap";
-import { Note } from "../types/notes.type";
+import { Note } from "../types/notes.types";
 
 type Props = {
     notes: Note[],

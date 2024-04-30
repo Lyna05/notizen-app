@@ -4,7 +4,7 @@ import CreateNote from './components/CreateNote';
 import Header from './components/Header';
 import NotesList from './components/NotesList';
 import { notesData } from './data/notes.data';
-import { Note } from './types/notes.type';
+import { Note } from './types/notes.types';
 import { useState } from 'react';
 
 
