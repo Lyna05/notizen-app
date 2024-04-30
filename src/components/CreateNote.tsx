@@ -12,33 +12,31 @@ function CreateNote(props: Props) {
     const titleRef = useRef<HTMLInputElement>(null);
     const contentRef = useRef<HTMLTextAreaElement>(null);
     const categoriesRef = useRef<HTMLInputElement>(null);
-    const userRef = useRef<HTMLInputElement>(null); // Neu hinzugefügt
-    const dateRef = useRef<HTMLInputElement>(null); // Neu hinzugefügt
+    const userRef = useRef<HTMLInputElement>(null);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const title = titleRef.current!.value;
         const content = contentRef.current!.value;
         const categoriesInput = categoriesRef.current!.value;
-        const user = userRef.current!.value; // Neu hinzugefügt
-       
+        const user = categoriesRef.current!.value;
 
-        if (!title || !content || !categoriesInput) return;
+        if (!title || !content || !categoriesInput || !user) return
 
         const id = props.notes.length + 1;
         const categories = categoriesInput.split(',').map(category => category.trim())
-        const date = new Date(); 
+        const date = new Date()
 
         props.addNote({
             title,
             content,
+            user,
+            date,
             categories,
-            user, // Neu hinzugefügt
-            date, // Neu hinzugefügt
             id
-        })
+        });
 
-    }
+    };
 
     return (
         <Card className='mb-1'>
@@ -58,13 +56,13 @@ function CreateNote(props: Props) {
                         <Form.Control type="text" placeholder="Gebe die Kategorien ein" ref={categoriesRef} />
                     </Form.Group>
                     <Form.Group className="mb-3">
-                        <Form.Label>Nutzer</Form.Label>
-                        <Form.Control type="text" placeholder="Gebe den Nutzer ein" ref={userRef} />
+                        <Form.Label>Benutzer</Form.Label>
+                        <Form.Control type="text" placeholder="Gebe den Benutzernamen ein" ref={userRef} />
                     </Form.Group>
-                    <Button type="submit" variant="outline-primary">Notiz erstellen</Button>
+                    <Button variant="outline-primary" type="submit">Notiz erstellen</Button>
                 </Form>
-            </Card.Body>
-        </Card>
+             </Card.Body>
+         </Card>
       );
 
 }
