@@ -1,14 +1,15 @@
 import useFetch from "react-fetch-hook";
 import { Note } from "../types/notes.types";
+import { BASE_URL } from "../config";
 
 export const useGetNotes = () => {
-    const { isLoading, data, error } = useFetch<Note[]>("http://localhost:3000/notes", {
+    const { isLoading, data, error } = useFetch<Note[]>(`${BASE_URL}/notes`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Lyne'
+            'Authorization': 'Galina'
         }
     });
 
-    return {isLoading, data, error} 
+    return { isLoading, data, error }
 }
